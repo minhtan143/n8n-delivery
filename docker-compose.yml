@@ -91,6 +91,7 @@ services:
       - JVM_MAXIMUM_MEMORY=4096m
     volumes:
       - confluence_data:/var/atlassian/application-data/confluence
+    user: root
     depends_on:
       postgres:
         condition: service_healthy
