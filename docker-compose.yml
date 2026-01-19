@@ -36,10 +36,10 @@ services:
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
       - N8N_BASIC_AUTH_PASSWORD=admin123
-      - N8N_HOST=localhost
-      - N8N_PORT=5678
-      - N8N_PROTOCOL=http
-      - WEBHOOK_URL=http://localhost:5678/
+      - N8N_HOST=n8n-tts.minhtanit.com
+      # - N8N_PORT=443
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n-tts.minhtanit.com/
       - GENERIC_TIMEZONE=America/New_York
     volumes:
       - n8n_data:/home/node/.n8n
@@ -54,9 +54,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - ATL_PROXY_NAME=localhost
-      - ATL_PROXY_PORT=8080
-      - ATL_TOMCAT_SCHEME=http
+      - ATL_PROXY_NAME=jira-tts.minhtanit.com
+      - ATL_PROXY_PORT=443
+      - ATL_TOMCAT_SCHEME=https
       - ATL_TOMCAT_SECURE=false
       - ATL_JDBC_URL=jdbc:postgresql://postgres:5432/jiradb
       - ATL_JDBC_USER=postgres
@@ -78,9 +78,9 @@ services:
     ports:
       - "8090:8090"
     environment:
-      - ATL_PROXY_NAME=localhost
-      - ATL_PROXY_PORT=8090
-      - ATL_TOMCAT_SCHEME=http
+      - ATL_PROXY_NAME=confluence-tts.minhtanit.com
+      - ATL_PROXY_PORT=443
+      - ATL_TOMCAT_SCHEME=https
       - ATL_TOMCAT_SECURE=false
       - ATL_JDBC_URL=jdbc:postgresql://postgres:5432/confluencedb
       - ATL_JDBC_USER=postgres

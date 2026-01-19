@@ -21,7 +21,7 @@ metadata:
   name: docker-backend
 subsets:
   - addresses:
-      - ip: 127.0.0.1
+      - ip: 62.146.232.100
     ports:
       - name: n8n
         port: 5678
